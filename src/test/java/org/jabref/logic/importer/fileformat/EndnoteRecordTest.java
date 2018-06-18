@@ -32,6 +32,8 @@ public class EndnoteRecordTest {
     private Abbr1 abbr1;
     private Abbr2 abbr2;
     private Abbr3 abbr3;
+    private Pages pages;
+    private Volume volume;
 
     @BeforeEach
     public void setUp() {
@@ -55,7 +57,8 @@ public class EndnoteRecordTest {
         abbr1 = new Abbr1();
         abbr2 = new Abbr2();
         abbr3 = new Abbr3();
-
+        pages = new Pages();
+        volume = new Volume();
     }
 
 
@@ -242,50 +245,75 @@ public class EndnoteRecordTest {
     /* INICIO TESTE CLASSE TITLES PARA USAR EM RECORD */
     @Test
     public void testGetTitleTitles() {
-        title.setStyle(style);
         titles.setTitle(title);
-        comparaStyle(titles.getTitle().getStyle());
+        assertEquals(title.getStyle(), titles.getTitle().getStyle());
     }
 
     @Test
     public void testGetSecondaryTitleTitles() {
-        secondaryTitle.setStyle(style);
         titles.setSecondaryTitle(secondaryTitle);
-        comparaStyle(titles.getSecondaryTitle().getStyle());
+        assertEquals(secondaryTitle.getStyle(), titles.getSecondaryTitle().getStyle());
     }
 
     @Test
     public void testGetTertiaryTitleTitles() {
-        tertiaryTitle.setStyle(style);
         titles.setTertiaryTitle(tertiaryTitle);
-        comparaStyle(titles.getTertiaryTitle().getStyle());
+        assertEquals(tertiaryTitle.getStyle(), titles.getTertiaryTitle().getStyle());
     }
 
     @Test
     public void testGetAltTitleTitles() {
-        altTitle.setStyle(style);
         titles.setAltTitle(altTitle);
-        comparaStyle(titles.getAltTitle().getStyle());
+        assertEquals(altTitle.getStyle(),titles.getAltTitle().getStyle());
     }
 
     @Test
     public void testGetShortTitleTitles() {
-        shortTitle.setStyle(style);
         titles.setShortTitle(shortTitle);
-        comparaStyle(titles.getShortTitle().getStyle());
+        assertEquals(shortTitle.getStyle(), titles.getShortTitle().getStyle());
     }
 
     @Test
     public void testGetTranslatedTitleTitles() {
-        translatedTitle.setStyle(style);
         titles.setTranslatedTitle(translatedTitle);
-        comparaStyle(titles.getTranslatedTitle().getStyle());
+        assertEquals(translatedTitle.getStyle(), titles.getTranslatedTitle().getStyle());
     }
 
     /* FIM TESTE TITLES */
 
 
+    /* INICIO TESTE CLASSE PAGES PARA USAR EM RECORD */
 
+    @Test
+    public void testGetEndPages(){
+        pages.setEnd("End Test");
+        assertEquals("End Test", pages.getEnd());
+    }
+
+    @Test
+    public void testGetStartPages(){
+        pages.setStart("Start Test");
+        assertEquals("Start Test", pages.getStart());
+    }
+
+    @Test
+    public void testGetStylePages(){
+        pages.setStyle(style);
+        comparaStyle(pages.getStyle());
+    }
+
+    /* FIM TESTE PAGES */
+
+
+    /* INICIO TESTE CLASSE VOLUME PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleVolume(){
+        volume.setStyle(style);
+        comparaStyle(volume.getStyle());
+    }
+
+    /* FIM TESTE VOLUME */
 
     /* INICIO TESTE CLASSE RECORD */
 
@@ -345,30 +373,40 @@ public class EndnoteRecordTest {
     public void testGetTitlesRecord() {
         record.setTitles(titles);
 
-        title.setStyle(style);
         titles.setTitle(title);
 
-        secondaryTitle.setStyle(style);
         titles.setSecondaryTitle(secondaryTitle);
 
-        tertiaryTitle.setStyle(style);
         titles.setTertiaryTitle(tertiaryTitle);
 
-        altTitle.setStyle(style);
         titles.setAltTitle(altTitle);
 
-        shortTitle.setStyle(style);
         titles.setShortTitle(shortTitle);
 
-        translatedTitle.setStyle(style);
         titles.setTranslatedTitle(translatedTitle);
 
-        comparaStyle(record.getTitles().getTitle().getStyle());
-        comparaStyle(record.getTitles().getSecondaryTitle().getStyle());
-        comparaStyle(record.getTitles().getTertiaryTitle().getStyle());
-        comparaStyle(record.getTitles().getAltTitle().getStyle());
-        comparaStyle(record.getTitles().getShortTitle().getStyle());
-        comparaStyle(record.getTitles().getTranslatedTitle().getStyle());
+        assertEquals(titles.getTitle().getStyle(),record.getTitles().getTitle().getStyle());
+        assertEquals(titles.getSecondaryTitle().getStyle(), record.getTitles().getSecondaryTitle().getStyle());
+        assertEquals(titles.getTertiaryTitle().getStyle(), record.getTitles().getTertiaryTitle().getStyle());
+        assertEquals(titles.getAltTitle().getStyle(), record.getTitles().getAltTitle().getStyle());
+        assertEquals(titles.getShortTitle().getStyle(), record.getTitles().getShortTitle().getStyle());
+        assertEquals(titles.getTranslatedTitle().getStyle(), record.getTitles().getTranslatedTitle().getStyle());
+
+    }
+
+    @Test
+    public void testGetPagesRecord() {
+        record.setPages(pages);
+
+        assertEquals(pages.getEnd(), record.getPages().getEnd());
+        assertEquals(pages.getStart(), record.getPages().getStart());
+        assertEquals(pages.getStyle(), record.getPages().getStyle());
+    }
+
+    @Test
+    public void testGetVolumeRecord(){
+        record.setVolume(volume);
+        assertEquals(volume.getStyle(), record.getVolume().getStyle());
     }
 
     /* FIM TESTE RECORD */

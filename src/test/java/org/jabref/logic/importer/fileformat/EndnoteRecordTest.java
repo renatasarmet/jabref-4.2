@@ -44,6 +44,18 @@ public class EndnoteRecordTest {
     private ReprintStatus reprintStatus;
     private Keyword keyword;
     private Keywords keywords;
+    private Dates dates;
+    private Year year;
+    private PubDates pubDates;
+    private CopyrightDates copyrightDates;
+    private ReviewedItem reviewedItem;
+    private Availability availability;
+    private RemoteSource remoteSource;
+    private MeetingPlace meetingPlace;
+    private WorkLocation workLocation;
+    private WorkExtent workExtent;
+    private PackMethod packMethod;
+    private Date date;
 
     @BeforeEach
     public void setUp() {
@@ -76,6 +88,18 @@ public class EndnoteRecordTest {
         reprintStatus = new ReprintStatus();
         keyword = new Keyword();
         keywords = new Keywords();
+        dates = new Dates();
+        year = new Year();
+        pubDates = new PubDates();
+        copyrightDates = new CopyrightDates();
+        reviewedItem = new ReviewedItem();
+        availability = new Availability();
+        remoteSource = new RemoteSource();
+        meetingPlace = new MeetingPlace();
+        workLocation = new WorkLocation();
+        workExtent = new WorkExtent();
+        packMethod = new PackMethod();
+        date = new Date();
     }
 
 
@@ -410,6 +434,177 @@ public class EndnoteRecordTest {
     /* FIM TESTE KEYWORDS */
 
 
+    /* INICIO TESTE CLASSE YEAR PARA USAR EM DATES */
+    @Test
+    public void testGetDayYearDates(){
+        year.setDay("Day Test");
+        assertEquals("Day Test", year.getDay());
+    }
+
+    @Test
+    public void testGetJulianYearDates(){
+        year.setJulian("Julian Test");
+        assertEquals("Julian Test", year.getJulian());
+    }
+
+    @Test
+    public void testGetMonthYearDates(){
+        year.setMonth("Month Test");
+        assertEquals("Month Test", year.getMonth());
+    }
+
+    @Test
+    public void testGetYearYearDates(){
+        year.setYear("Year Test");
+        assertEquals("Year Test", year.getYear());
+    }
+
+    @Test
+    public void testGetStyleYearDates(){
+        year.setStyle(style);
+        comparaStyle(year.getStyle());
+    }
+
+    /* FIM TESTE YEAR */
+
+
+    /* INICIO TESTE CLASSE DATE PARA USAR EM PUBDATES */
+    @Test
+    public void testGetDayDatePubDatesDates(){
+        date.setDay("Day Test");
+        assertEquals("Day Test", date.getDay());
+    }
+
+    @Test
+    public void testGetJulianDatePubDatesDates(){
+        date.setJulian("Julian Test");
+        assertEquals("Julian Test", date.getJulian());
+    }
+
+    @Test
+    public void testGetMonthDatePubDatesDates(){
+        date.setMonth("Month Test");
+        assertEquals("Month Test", date.getMonth());
+    }
+
+    @Test
+    public void testGetYearDatePubDatesDates(){
+        date.setYear("Year Test");
+        assertEquals("Year Test", date.getYear());
+    }
+
+    @Test
+    public void testGetStyleDatePubDatesDates(){
+        date.setStyle(style);
+        comparaStyle(date.getStyle());
+    }
+    /* FIM TESTE DATE */
+
+
+    /* INICIO TESTE CLASSE PUBDATES PARA USAR EM DATES*/
+    @Test
+    public void testGetDatePubDatesDates(){
+        List<Date> listDate = new ArrayList<Date>();
+        assertEquals(listDate, pubDates.getDate());
+    }
+
+    /* FIM TESTE PUBDATES */
+
+    /* INICIO TESTE CLASSE COPYRIGHTDATES PARA USAR EM DATES*/
+    @Test
+    public void testGetDateCopyrightDatesDates(){
+        List<Date> listDate = new ArrayList<Date>();
+        assertEquals(listDate, copyrightDates.getDate());
+    }
+
+    /* FIM TESTE COPYRIGHTDATES */
+
+
+    /* INICIO TESTE CLASSE DATES PARA USAR EM RECORD */
+    @Test
+    public void testGetYearDates(){
+        dates.setYear(year);
+        assertEquals(year, dates.getYear());
+    }
+
+    @Test
+    public void testGetPubDatesDates(){
+        dates.setPubDates(pubDates);
+        assertEquals(pubDates,dates.getPubDates());
+    }
+
+    @Test
+    public void testGetCopyrightDatesDates(){
+        dates.setCopyrightDates(copyrightDates);
+        assertEquals(copyrightDates,dates.getCopyrightDates());
+    }
+
+    /* FIM TESTE DATES */
+
+
+    /* INICIO TESTE CLASSE REVIEWEDITEM PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleReviewedItem(){
+        reviewedItem.setStyle(style);
+        comparaStyle(reviewedItem.getStyle());
+    }
+
+    /* FIM TESTE REVIEWEDITEM */
+
+    /* INICIO TESTE CLASSE AVAILABILITY PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleAvailability(){
+        availability.setStyle(style);
+        comparaStyle(availability.getStyle());
+    }
+
+    /* FIM TESTE AVAILABILITY */
+
+    /* INICIO TESTE CLASSE REMOTESOURCE PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleRemoteSource(){
+        remoteSource.setStyle(style);
+        comparaStyle(remoteSource.getStyle());
+    }
+
+    /* FIM TESTE REMOTESOURCE */
+
+    /* INICIO TESTE CLASSE MEETINGPLACE PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleMeetingPlace(){
+        meetingPlace.setStyle(style);
+        comparaStyle(meetingPlace.getStyle());
+    }
+
+    /* FIM TESTE MEETINGPLACE */
+
+
+    /* INICIO TESTE CLASSE WORKLOCATION PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleWorkLocation(){
+        workLocation.setStyle(style);
+        comparaStyle(workLocation.getStyle());
+    }
+
+    /* FIM TESTE WORKLOCATION */
+
+    /* INICIO TESTE CLASSE WORKEXTENT PARA USAR EM RECORD */
+    @Test
+    public void testGetStyleWorkExtent(){
+        workExtent.setStyle(style);
+        comparaStyle(workExtent.getStyle());
+    }
+
+    /* FIM TESTE WORKEXTENT */
+
+    /* INICIO TESTE CLASSE PACKMETHOD PARA USAR EM RECORD */
+    @Test
+    public void testGetStylePackMethod(){
+        packMethod.setStyle(style);
+        comparaStyle(packMethod.getStyle());
+    }
+
+    /* FIM TESTE PACKMETHOD */
 
 
     /* INICIO TESTE CLASSE RECORD */
@@ -541,6 +736,54 @@ public class EndnoteRecordTest {
     public void testGetKeywords(){
         record.setKeywords(keywords);
         assertEquals(keywords,record.getKeywords());
+    }
+
+    @Test
+    public void testGetDates(){
+        record.setDates(dates);
+        assertEquals(dates, record.getDates());
+    }
+
+    @Test
+    public void testGetReviewedItem(){
+        record.setReviewedItem(reviewedItem);
+        assertEquals(reviewedItem, record.getReviewedItem());
+    }
+
+    @Test
+    public void testGetAvailability(){
+        record.setAvailability(availability);
+        assertEquals(availability, record.getAvailability());
+    }
+
+    @Test
+    public void testGetRemoteSource(){
+        record.setRemoteSource(remoteSource);
+        assertEquals(remoteSource, record.getRemoteSource());
+    }
+
+    @Test
+    public void testGetMeetingPlace(){
+        record.setMeetingPlace(meetingPlace);
+        assertEquals(meetingPlace, record.getMeetingPlace());
+    }
+
+    @Test
+    public void testGetWorkLocation(){
+        record.setWorkLocation(workLocation);
+        assertEquals(workLocation, record.getWorkLocation());
+    }
+
+    @Test
+    public void testGetWorkExtent(){
+        record.setWorkExtent(workExtent);
+        assertEquals(workExtent, record.getWorkExtent());
+    }
+
+    @Test
+    public void testGetPackMethod(){
+        record.setPackMethod(packMethod);
+        assertEquals(packMethod, record.getPackMethod());
     }
 
     /* FIM TESTE RECORD */

@@ -55,6 +55,7 @@ public class EndnoteRecordTest {
         abbr1 = new Abbr1();
         abbr2 = new Abbr2();
         abbr3 = new Abbr3();
+
     }
 
 
@@ -239,54 +240,51 @@ public class EndnoteRecordTest {
 
 
     /* INICIO TESTE CLASSE TITLES PARA USAR EM RECORD */
-    /* ************************CORRIGIR
     @Test
     public void testGetTitleTitles() {
+        title.setStyle(style);
         titles.setTitle(title);
         comparaStyle(titles.getTitle().getStyle());
     }
 
     @Test
     public void testGetSecondaryTitleTitles() {
+        secondaryTitle.setStyle(style);
         titles.setSecondaryTitle(secondaryTitle);
         comparaStyle(titles.getSecondaryTitle().getStyle());
     }
 
     @Test
     public void testGetTertiaryTitleTitles() {
+        tertiaryTitle.setStyle(style);
         titles.setTertiaryTitle(tertiaryTitle);
         comparaStyle(titles.getTertiaryTitle().getStyle());
     }
 
     @Test
     public void testGetAltTitleTitles() {
+        altTitle.setStyle(style);
         titles.setAltTitle(altTitle);
         comparaStyle(titles.getAltTitle().getStyle());
     }
 
     @Test
     public void testGetShortTitleTitles() {
+        shortTitle.setStyle(style);
         titles.setShortTitle(shortTitle);
         comparaStyle(titles.getShortTitle().getStyle());
     }
 
     @Test
     public void testGetTranslatedTitleTitles() {
+        translatedTitle.setStyle(style);
         titles.setTranslatedTitle(translatedTitle);
         comparaStyle(titles.getTranslatedTitle().getStyle());
     }
-    */
+
     /* FIM TESTE TITLES */
 
 
-    /* INICIO TESTE CLASSE FULLTITLE PARA USAR EM PERIODICAL */
-
-    /* FIM TESTE FULLTIME */
-
-
-    /* INICIO TESTE CLASSE PERIODICAL PARA USAR EM RECORD */
-
-    /* FIM TESTE PERIODICAL */
 
 
     /* INICIO TESTE CLASSE RECORD */
@@ -342,10 +340,29 @@ public class EndnoteRecordTest {
         assertEquals(authAffiliaton.getStyle(), record.getAuthAffiliaton().getStyle());
     }
 
-    /* ***** CORRIGIRR
+
     @Test
     public void testGetTitlesRecord() {
         record.setTitles(titles);
+
+        title.setStyle(style);
+        titles.setTitle(title);
+
+        secondaryTitle.setStyle(style);
+        titles.setSecondaryTitle(secondaryTitle);
+
+        tertiaryTitle.setStyle(style);
+        titles.setTertiaryTitle(tertiaryTitle);
+
+        altTitle.setStyle(style);
+        titles.setAltTitle(altTitle);
+
+        shortTitle.setStyle(style);
+        titles.setShortTitle(shortTitle);
+
+        translatedTitle.setStyle(style);
+        titles.setTranslatedTitle(translatedTitle);
+
         comparaStyle(record.getTitles().getTitle().getStyle());
         comparaStyle(record.getTitles().getSecondaryTitle().getStyle());
         comparaStyle(record.getTitles().getTertiaryTitle().getStyle());
@@ -353,7 +370,7 @@ public class EndnoteRecordTest {
         comparaStyle(record.getTitles().getShortTitle().getStyle());
         comparaStyle(record.getTitles().getTranslatedTitle().getStyle());
     }
-    */
+
     /* FIM TESTE RECORD */
 
 }

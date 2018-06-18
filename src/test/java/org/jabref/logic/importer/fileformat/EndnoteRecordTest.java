@@ -7,6 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Answers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
@@ -34,6 +37,13 @@ public class EndnoteRecordTest {
     private Abbr3 abbr3;
     private Pages pages;
     private Volume volume;
+    private NumVols numVols;
+    private Edition edition;
+    private Section section;
+    private ReprintEdition reprintEdition;
+    private ReprintStatus reprintStatus;
+    private Keyword keyword;
+    private Keywords keywords;
 
     @BeforeEach
     public void setUp() {
@@ -59,6 +69,13 @@ public class EndnoteRecordTest {
         abbr3 = new Abbr3();
         pages = new Pages();
         volume = new Volume();
+        numVols = new NumVols();
+        edition = new Edition();
+        section = new Section();
+        reprintEdition = new ReprintEdition();
+        reprintStatus = new ReprintStatus();
+        keyword = new Keyword();
+        keywords = new Keywords();
     }
 
 
@@ -315,6 +332,86 @@ public class EndnoteRecordTest {
 
     /* FIM TESTE VOLUME */
 
+    /* INICIO TESTE CLASSE NUMVOLS PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleNumVols(){
+        numVols.setStyle(style);
+        comparaStyle(numVols.getStyle());
+    }
+
+    /* FIM TESTE NUMVOLS */
+
+    /* INICIO TESTE CLASSE EDITION PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleEdition(){
+        edition.setStyle(style);
+        comparaStyle(edition.getStyle());
+    }
+
+    /* FIM TESTE EDITION */
+
+    /* INICIO TESTE CLASSE SECTION PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleSection(){
+        section.setStyle(style);
+        comparaStyle(section.getStyle());
+    }
+
+    /* FIM TESTE SECTION */
+
+    /* INICIO TESTE CLASSE REPRINTEDITION PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleReprintEdition(){
+        reprintEdition.setStyle(style);
+        comparaStyle(reprintEdition.getStyle());
+    }
+
+    /* FIM TESTE REPRINTEDITION */
+
+    /* INICIO TESTE CLASSE REPRINTSTATUS PARA USAR EM RECORD */
+
+    @Test
+    public void testGetDateReprintStatus(){
+        reprintStatus.setDate("Date Test");
+        assertEquals("Date Test", reprintStatus.getDate());
+    }
+
+    @Test
+    public void testGetStatusReprintStatus(){
+        reprintStatus.setStatus("Status Test");
+        assertEquals("Status Test", reprintStatus.getStatus());
+    }
+
+    /* FIM TESTE REPRINTSTATUS */
+
+
+    /* INICIO TESTE CLASSE KEYWORD PARA USAR EM KEYWORDS */
+
+    @Test
+    public void testGetStyleKeywordKeywords(){
+        keyword.setStyle(style);
+        comparaStyle(keyword.getStyle());
+    }
+
+    /* FIM TESTE KEYWORD */
+
+
+    /* INICIO TESTE CLASSE KEYWORDS PARA USAR EM RECORD */
+
+    @Test
+    public void testGetKeywordKeywords(){
+        List<Keyword> listKeyword = new ArrayList<Keyword>();
+        assertEquals(listKeyword, keywords.getKeyword());
+    }
+    /* FIM TESTE KEYWORDS */
+
+
+
+
     /* INICIO TESTE CLASSE RECORD */
 
     @Test
@@ -407,6 +504,43 @@ public class EndnoteRecordTest {
     public void testGetVolumeRecord(){
         record.setVolume(volume);
         assertEquals(volume.getStyle(), record.getVolume().getStyle());
+    }
+
+    @Test
+    public void testGetNumVolsRecord(){
+        record.setNumVols(numVols);
+        assertEquals(numVols.getStyle(), record.getNumVols().getStyle());
+    }
+
+    @Test
+    public void testGetEditionRecord(){
+        record.setEdition(edition);
+        assertEquals(edition.getStyle(), record.getEdition().getStyle());
+    }
+
+    @Test
+    public void testGetSectionRecord(){
+        record.setSection(section);
+        assertEquals(section.getStyle(), record.getSection().getStyle());
+    }
+
+    @Test
+    public void testGetSectionReprintEdition(){
+        record.setReprintEdition(reprintEdition);
+        assertEquals(reprintEdition.getStyle(), record.getReprintEdition().getStyle());
+    }
+
+    @Test
+    public void testGetReprintStatus(){
+        record.setReprintStatus(reprintStatus);
+        assertEquals(reprintStatus.getDate(),record.getReprintStatus().getDate());
+        assertEquals(reprintStatus.getStatus(), record.getReprintStatus().getStatus());
+    }
+
+    @Test
+    public void testGetKeywords(){
+        record.setKeywords(keywords);
+        assertEquals(keywords,record.getKeywords());
     }
 
     /* FIM TESTE RECORD */

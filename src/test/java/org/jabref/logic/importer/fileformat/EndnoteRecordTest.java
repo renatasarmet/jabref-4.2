@@ -748,6 +748,14 @@ public class EndnoteRecordTest {
         List<Keyword> listKeyword = new ArrayList<Keyword>();
         assertEquals(listKeyword, keywords.getKeyword());
     }
+
+    @Test
+    public void testGetNotNullKeywordKeywords(){
+        List<Keyword> listKeyword = new ArrayList<Keyword>();
+        listKeyword.add(keyword);
+        keywords.getKeyword().add(keyword);
+        assertEquals(listKeyword,keywords.getKeyword());
+    }
     /* FIM TESTE KEYWORDS */
 
 
@@ -825,6 +833,14 @@ public class EndnoteRecordTest {
         assertEquals(listDate, pubDates.getDate());
     }
 
+    @Test
+    public void testGetDateNotNullPubDatesDates(){
+        List<Date> listDate = new ArrayList<Date>();
+        listDate.add(date);
+        pubDates.getDate().add(date);
+        assertEquals(listDate, pubDates.getDate());
+    }
+
     /* FIM TESTE PUBDATES */
 
     /* INICIO TESTE CLASSE COPYRIGHTDATES PARA USAR EM DATES*/
@@ -834,6 +850,13 @@ public class EndnoteRecordTest {
         assertEquals(listDate, copyrightDates.getDate());
     }
 
+    @Test
+    public void testGetDateNotNullCopyrightDatesDates(){
+        List<Date> listDate = new ArrayList<Date>();
+        listDate.add(date);
+        copyrightDates.getDate().add(date);
+        assertEquals(listDate, copyrightDates.getDate());
+    }
     /* FIM TESTE COPYRIGHTDATES */
 
 
@@ -1317,8 +1340,24 @@ public class EndnoteRecordTest {
     }
 
     @Test
+    public void testGetAuthorNotNullAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        listAuthor.add(author);
+        authors.getAuthor().add(author);
+        assertEquals(listAuthor, authors.getAuthor());
+    }
+
+    @Test
     public void testGetAuthorSecondaryAuthorsContributors(){
         List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, secondaryauthors.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthorNotNullSecondaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        listAuthor.add(author);
+        secondaryauthors.getAuthor().add(author);
         assertEquals(listAuthor, secondaryauthors.getAuthor());
     }
 
@@ -1329,8 +1368,24 @@ public class EndnoteRecordTest {
     }
 
     @Test
+    public void testGetAuthorNotNullTertiaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        listAuthor.add(author);
+        tertiaryauthors.getAuthor().add(author);
+        assertEquals(listAuthor, tertiaryauthors.getAuthor());
+    }
+
+    @Test
     public void testGetAuthorSubsidiaryAuthorsContributors(){
         List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, subsidiaryauthors.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthorNotNullSubsidiaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        listAuthor.add(author);
+        subsidiaryauthors.getAuthor().add(author);
         assertEquals(listAuthor, subsidiaryauthors.getAuthor());
     }
 
@@ -1339,6 +1394,15 @@ public class EndnoteRecordTest {
         List<Author> listAuthor = new ArrayList<Author>();
         assertEquals(listAuthor, translatedauthors.getAuthor());
     }
+
+    @Test
+    public void testGetAuthorNotNullTranslatedAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        listAuthor.add(author);
+        translatedauthors.getAuthor().add(author);
+        assertEquals(listAuthor, translatedauthors.getAuthor());
+    }
+
 
     /* FIM TESTE AUTHORS */
 
@@ -1814,6 +1878,14 @@ public class EndnoteRecordTest {
     @Test
     public void testGetRecordRecords(){
         List<Record> listRecord = new ArrayList<Record>();
+        assertEquals(listRecord, records.getRecord());
+    }
+
+    @Test
+    public void testGetRecordNotNullRecords(){
+        List<Record> listRecord = new ArrayList<Record>();
+        listRecord.add(record);
+        records.getRecord().add(record);
         assertEquals(listRecord, records.getRecord());
     }
     /* FIM TESTE RECORDS */

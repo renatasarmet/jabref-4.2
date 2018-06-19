@@ -17,6 +17,23 @@ public class EndnoteRecordTest {
     private Record record;
     private Database database;
     private String recnumber;
+    private RemoteDatabaseProvider remoteDatabaseProvider;
+    private Language language;
+    private ImageUrls imageUrls;
+    private RelatedUrls relatedUrls;
+    private TextUrls textUrls;
+    private PdfUrls pdfUrls;
+    private WebUrls weburls;
+    private Url url;
+    private Urls urls;
+    private AccessDate accessDate;
+    private ModifiedDate modifiedDate;
+    private Custom1 custom1;
+    private Custom2 custom2;
+    private Custom3 custom3;
+    private Custom4 custom4;
+    private Custom5 custom5;
+    private Custom6 custom6;
     private Custom7 custom7;
     private Misc1 misc1;
     private Misc2 misc2;
@@ -61,6 +78,23 @@ public class EndnoteRecordTest {
     public void setUp() {
         database = new ObjectFactory().createDatabase();
         record = new ObjectFactory().createRecord();
+        remoteDatabaseProvider = new ObjectFactory().createRemoteDatabaseProvider();
+        language = new ObjectFactory().createLanguage();
+        imageUrls = new ObjectFactory().createImageUrls();
+        relatedUrls = new ObjectFactory().createRelatedUrls();
+        textUrls = new ObjectFactory().createTextUrls();
+        pdfUrls = new ObjectFactory().createPdfUrls();
+        weburls = new ObjectFactory().createWebUrls();
+        url = new ObjectFactory().createUrl();
+        urls = new ObjectFactory().createUrls();
+        accessDate = new ObjectFactory().createAccessDate();
+        modifiedDate = new ObjectFactory().createModifiedDate();
+        custom1 = new ObjectFactory().createCustom1();
+        custom2 = new ObjectFactory().createCustom2();
+        custom3 = new ObjectFactory().createCustom3();
+        custom4 = new ObjectFactory().createCustom4();
+        custom5 = new ObjectFactory().createCustom5();
+        custom6 = new ObjectFactory().createCustom6();
         custom7 = new ObjectFactory().createCustom7();
         misc1 = new ObjectFactory().createMisc1();
         misc2 = new ObjectFactory().createMisc2();
@@ -134,9 +168,39 @@ public class EndnoteRecordTest {
 
     /* FIM TESTE DATABASE */
 
+      /* INICIO TESTES DA CLASSE URL */
 
+     @Test
+     public void testGetHasUtUrl(){
+         url.setHasUt("Ut Test");
+         assertEquals("Ut Test", url.getHasUt());
+     }
 
+     @Test
+     public void testPpvAppUrl(){
+         url.setPpvApp("PvpApp Test");
+         assertEquals("PvpApp Test", url.getPpvApp());
+     }
 
+     @Test
+     public void testPpvRefUrl(){
+         url.setPpvRef("PvpRef Test");
+         assertEquals("PvpRef Test", url.getPpvRef());
+     }
+
+     @Test
+     public void testPpvUtUrl(){
+         url.setPpvUt("PvpUt Test");
+         assertEquals("PvpUt Test", url.getPpvUt());
+     }
+
+     @Test
+     public void testGetStyleUrl(){
+         url.setStyle(style);
+         comparaStyle(url.getStyle());
+     }
+
+     /* FIM TESTE URL */
 
     /* INICIO TESTES DA CLASSE STYLE PARA USAR EM MISC3 */
 
@@ -202,8 +266,6 @@ public class EndnoteRecordTest {
 
     /* FIM TESTE MISC1 */
 
-
-
     /* INICIO TESTE DA CLASSE CUSTOM7 PARA USAR EM RECORD */
 
     @Test
@@ -213,6 +275,190 @@ public class EndnoteRecordTest {
     }
 
     /* FIM TESTE CUSTOM7 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM6 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom6(){
+        custom6.setStyle(style);
+        comparaStyle(custom6.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM6 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM5 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom5(){
+        custom5.setStyle(style);
+        comparaStyle(custom5.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM5 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM4 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom4(){
+        custom4.setStyle(style);
+        comparaStyle(custom4.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM4 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM3 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom3(){
+        custom3.setStyle(style);
+        comparaStyle(custom3.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM3 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM2 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom2(){
+        custom2.setStyle(style);
+        comparaStyle(custom2.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM2 */
+
+    /* INICIO TESTE DA CLASSE CUSTOM1 PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleCustom1(){
+        custom1.setStyle(style);
+        comparaStyle(custom1.getStyle());
+    }
+
+    /* FIM TESTE CUSTOM1 */
+
+    /* INICIO TESTE DA CLASSE MODIFIEDDATE PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleModifiedDate(){
+        modifiedDate.setStyle(style);
+        comparaStyle(modifiedDate.getStyle());
+    }
+
+    /* FIM TESTE MODIFIEDDATE */
+
+    /* INICIO TESTE DA CLASSE ACCESSDATE PARA USAR EM RECORD */
+
+    @Test
+    public void testGetStyleAccessDate(){
+        accessDate.setStyle(style);
+        comparaStyle(accessDate.getStyle());
+    }
+
+    /* FIM TESTE ACCESSDATE */
+
+    /* INICIO TESTE DA CLASSE WEBURLS PARA USAR EM URLS */
+
+    @Test
+    public void TestGerUrlWebUrls(){
+        List<Url> listUrl = new ArrayList<Url>();
+        assertEquals(listUrl, weburls.getUrl());
+    }
+
+    /* FIM TESTE WEBURLS */
+
+    /* INICIO TESTE DA CLASSE PDFURLS PARA USAR EM URLS */
+
+    @Test
+    public void TestGerUrlPdfUrls(){
+        List<Url> listUrl = new ArrayList<Url>();
+        assertEquals(listUrl, pdfUrls.getUrl());
+    }
+
+    /* FIM TESTE PDFURLS */
+
+    /* INICIO TESTE DA CLASSE TEXTURLS PARA USAR EM URLS */
+
+    @Test
+    public void TestGerUrlTextUrls(){
+        List<Url> listUrl = new ArrayList<Url>();
+        assertEquals(listUrl, textUrls.getUrl());
+    }
+
+    /* FIM TESTE TEXTURLS */
+
+    /* INICIO TESTE DA CLASSE RELATEDURLS PARA USAR EM URLS */
+
+    @Test
+    public void TestGerUrlRelatedUrls(){
+        List<Url> listUrl = new ArrayList<Url>();
+        assertEquals(listUrl, relatedUrls.getUrl());
+    }
+
+    /* FIM TESTE RELATEDURLS */
+
+    /* INICIO TESTE DA CLASSE IMAGEURLS PARA USAR EM URLS */
+
+    @Test
+    public void TestGerUrlImageUrls(){
+        List<Url> listUrl = new ArrayList<Url>();
+        assertEquals(listUrl, imageUrls.getUrl());
+    }
+
+    /* FIM TESTE IMAGEURLS */
+
+    /* INCIO TESTE URLS PARA USAR EM RECORS */
+
+    @Test
+    public void TestGetWebUrlsUrls(){
+        urls.setWebUrls(weburls);
+        assertEquals(weburls.getUrl(), urls.getWebUrls().getUrl());
+    }
+
+    @Test
+    public void TestGetPdfUrlsUrls(){
+        urls.setPdfUrls(pdfUrls);
+        assertEquals(pdfUrls.getUrl(), urls.getPdfUrls().getUrl());
+    }
+
+    @Test
+    public void TestGetTextUrlsUrls(){
+        urls.setTextUrls(textUrls);
+        assertEquals(textUrls.getUrl(), urls.getTextUrls().getUrl());
+    }
+
+    @Test
+    public void TestGetRelatedUrlsUrls(){
+        urls.setRelatedUrls(relatedUrls);
+        assertEquals(relatedUrls.getUrl(), urls.getRelatedUrls().getUrl());
+    }
+
+    @Test
+    public void TestGetImageUrlsUrls(){
+        urls.setImageUrls(imageUrls);
+        assertEquals(imageUrls.getUrl(), urls.getImageUrls().getUrl());
+    }
+
+    /* FIM TESTE URLS */
+
+    /* INICIO TESTES DA CLASSE LANGUAGE PARA USAR EM RECORDS */
+
+    @Test
+    public void testGetStyleLanguage(){
+        language.setStyle(style);
+        comparaStyle(language.getStyle());
+    }
+
+    /* FIM TESTE LANGUAGE*/
+
+    /* INICIO TESTES DA CLASSE REMOTEDATABASEPROVIDER PARA USAR EM RECORDS */
+
+    @Test
+    public void testGetStyleRemoteDatabaseProvider(){
+        remoteDatabaseProvider.setStyle(style);
+        comparaStyle(remoteDatabaseProvider.getStyle());
+    }
+
+    /* FIM TESTE REMOTEDATABASEPROVIDER*/
 
 
     /* INICIO TESTE CLASSE AUTHADDRESS PARA USAR EM RECORD*/
@@ -623,6 +869,77 @@ public class EndnoteRecordTest {
     public void testGetRecNumberRecord() {
         record.setRecNumber("RecNumber Test");
         assertEquals("RecNumber Test", record.getRecNumber());
+    }
+
+    @Test
+    public void testGetRemoteDatabaseProvider(){
+        record.setRemoteDatabaseProvider(remoteDatabaseProvider);
+        assertEquals(remoteDatabaseProvider.getStyle(), record.getRemoteDatabaseProvider().getStyle());
+    }
+
+    @Test
+    public void testGetLanguage(){
+        record.setLanguage(language);
+        assertEquals(language.getStyle(), record.getLanguage().getStyle());
+    }
+
+    @Test
+    public void testGetUrls(){
+        record.setUrls(urls);
+
+        assertEquals(urls.getWebUrls(), record.getUrls().getWebUrls());
+        assertEquals(urls.getPdfUrls(), record.getUrls().getPdfUrls());
+        assertEquals(urls.getTextUrls(), record.getUrls().getTextUrls());
+        assertEquals(urls.getRelatedUrls(), record.getUrls().getRelatedUrls());
+        assertEquals(urls.getImageUrls(), record.getUrls().getImageUrls());
+    }
+
+    @Test
+    public void testGetAccessDateRecord(){
+        record.setAccessDate(accessDate);
+        assertEquals(accessDate.getStyle(), record.getAccessDate().getStyle());
+    }
+
+    @Test
+    public void testGetModifiedDateRecord(){
+        record.setModifiedDate(modifiedDate);
+        assertEquals(modifiedDate.getStyle(), record.getModifiedDate().getStyle());
+    }
+
+    @Test
+    public void testGetCustom1Record(){
+        record.setCustom1(custom1);
+        assertEquals(custom1.getStyle(), record.getCustom1().getStyle());
+    }
+
+    @Test
+    public void testGetCustom2Record(){
+        record.setCustom2(custom2);
+        assertEquals(custom2.getStyle(), record.getCustom2().getStyle());
+    }
+
+    @Test
+    public void testGetCustom3Record(){
+        record.setCustom3(custom3);
+        assertEquals(custom3.getStyle(), record.getCustom3().getStyle());
+    }
+
+    @Test
+    public void testGetCustom4Record(){
+        record.setCustom4(custom4);
+        assertEquals(custom4.getStyle(), record.getCustom4().getStyle());
+    }
+
+    @Test
+    public void testGetCustom5Record(){
+        record.setCustom5(custom5);
+        assertEquals(custom5.getStyle(), record.getCustom5().getStyle());
+    }
+
+    @Test
+    public void testGetCustom6Record(){
+        record.setCustom6(custom6);
+        assertEquals(custom6.getStyle(), record.getCustom6().getStyle());
     }
 
     @Test

@@ -73,6 +73,38 @@ public class EndnoteRecordTest {
     private WorkExtent workExtent;
     private PackMethod packMethod;
     private Date date;
+    private SourceApp sourceApp;
+    private RefType refType;
+    private Number number;
+    private Issue issue;
+    private SecundaryVolume secudaryvolume;
+    private SecundaryIssue secudaryissue;
+    private PubLocation publocation;
+    private Publisher publisher;
+    private OrigPub origpub;
+    private Isbn isbn;
+    private AccessionNum accessionnum;
+    private CallNum callnum;
+    private ReportId reportid;
+    private Coden coden;
+    private EletronicResourceNum electronicresourcenum;
+    private Abstract abstractt;
+    private Label label;
+    private Image image;
+    private Caption caption;
+    private Notes notes;
+    private ResearchNotes researchnotes;
+    private WorkType worktype;
+    private Size size;
+    private ReproRatio reproratio;
+    private RemoteDatabaseName remotedatabasename;
+    private Author author;
+    private Authors authors;
+    private Contributors contributors;
+    private SecundaryAuthors secundaryauthors;
+    private TertiaryAuthors tertiaryauthors;
+    private SubsidiaryAuthors subsidiaryauthors;
+    private TranslatedAuthors translatedauthors;
 
     @BeforeEach
     public void setUp() {
@@ -134,7 +166,38 @@ public class EndnoteRecordTest {
         workExtent = new ObjectFactory().createWorkExtent();
         packMethod = new ObjectFactory().createPackMethod();
         date = new ObjectFactory().createDate();
-
+        sourceApp = new ObjectFactory().createSourceApp();
+        refType = new ObjectFactory().createRefType();
+        number = new ObjectFactory().createNumber();
+        issue = new ObjectFactory().createIssue();
+        secudaryvolume = new ObjectFactory().createSecundaryVolume();
+        secudaryissue = new ObjectFactory().createSecundaryIssue();
+        publocation = new ObjectFactory().createPubLocation();
+        publisher = new ObjectFactory().createPublishe();
+        origpub = new ObjectFactory().createOrigPub();
+        isbn = new ObjectFactory().createIsbn();
+        accessionnum = new ObjectFactory().createAccessionNum();
+        callnum = new ObjectFactory().createCallNum();
+        reportid = new ObjectFactory().createReportId();
+        coden = new ObjectFactory().createCoden();
+        electronicresourcenum = new ObjectFactory().createEletronicResourceNum();
+        abstractt = new ObjectFactory().createAbstract();
+        label = new ObjectFactory().createLabel();
+        image = new ObjectFactory().createImage();
+        caption = new ObjectFactory().createCaption();
+        notes = new ObjectFactory().createNotes();
+        researchnotes = new ObjectFactory().createResearchNotes();
+        worktype = new ObjectFactory().createWorkType();
+        size = new ObjectFactory().createSize();
+        reproratio  = new ObjectFactory().createReproRatio();
+        remotedatabasename = new ObjectFactory().createRemoteDatabaseName();
+        author = new ObjectFactory().createAuthor();
+        authors = new ObjectFactory().createAuthors();
+        contributors = new ObjectFactory().createContributors();
+        secundaryauthors = new ObjectFactory().createSecundaryAuthors();
+        tertiaryauthors = new ObjectFactory().createTertiaryAuthors();
+        subsidiaryauthors = new ObjectFactory().createSubsidiaryAuthors();
+        translatedauthors = new ObjectFactory().createTranslateAuthors();
     }
 
 
@@ -853,6 +916,425 @@ public class EndnoteRecordTest {
 
     /* FIM TESTE PACKMETHOD */
 
+    /* INICIO TESTE DA CLASSE SOURCEAPP PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetSourceAppName(){
+        sourceApp.setName("Name Test");
+        assertEsquals("Name Test", sourceApp.getName());
+    }
+
+    @Test 
+    public void testGetSourceAppPath(){
+        sourceApp.setPath("Path Test");
+        assertEsquals("Path Test", sourceApp.getPath());
+    }
+
+    @Test 
+    public void testGetSourceAppValue(){
+        sourceApp.setValue("Value Test");
+        assertEsquals("Value Test", sourceApp.getValue());
+    }
+
+    /* FIM TESTE SOURCEAPP */
+
+    /* INICIO TESTE DA CLASSE REFTYPE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetRefTypeName(){
+        refType.setName("Name Test");
+        assertEsquals("Name Test", refType.getName());
+    }
+
+    @Test 
+    public void testGetRefTypeValue(){
+        refType.setValue("Value Test");
+        assertEsquals("Value Test", refType.getValue());
+    }
+
+    /* FIM TESTE REFTYPE */
+
+    /* INICIO TESTE DA CLASSE PERIODICAL PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleFullTitle(){
+        fulltitle.setStyle(style);
+        comparaStyle(fulltitle.getStyle());
+    }
+
+    @Test 
+    public void testGetAbbr1Periodical(){
+        abbr1.setStyle(style);
+        comparaStyle(abbr1.getStyle());
+    }
+
+    @Test 
+    public void testGetAbbr2Periodical(){
+        abbr2.setStyle(style);
+        comparaStyle(abbr2.getStyle());
+    }
+
+    @Test 
+    public void testGetAbbr3Periodical(){
+        abbr3.setStyle(style);
+        comparaStyle(abbr3.getStyle());
+    }
+
+    /* FIM TESTE PERIODICAL */
+
+
+    /* INICIO TESTE DA CLASSE NUMBER PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleNumber(){
+        number.setStyle(style);
+        comparaStyle(number.getStyle());
+    }
+
+    /* FIM TESTE NUMBER */
+
+
+    /* INICIO TESTE DA CLASSE ISSUE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleIssue(){
+        issue.setStyle(style);
+        comparaStyle(issue.getStyle());
+    }
+
+    /* FIM TESTE ISSUE */
+
+    /* INICIO TESTE DA CLASSE SECUNDARYVOLUME PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleSecundaryVolume(){
+        secudaryvolume.setStyle(style);
+        comparaStyle(secudaryvolume.getStyle());
+    }
+
+    /* FIM TESTE SECUNDARYVOLUME */
+
+
+    /* INICIO TESTE DA CLASSE SECUNDARYISSUE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleSecundaryIssue(){
+        secudaryissue.setStyle(style);
+        comparaStyle(secudaryissue.getStyle());
+    }
+
+    /* FIM TESTE SECUNDARYISSUE */
+
+
+    /* INICIO TESTE DA CLASSE PUBLOCATION PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStylePubLocation(){
+        publocation.setStyle(style);
+        comparaStyle(publocation.getStyle());
+    }
+
+    /* FIM TESTE PUBLOCATION */
+
+
+    /* INICIO TESTE DA CLASSE PUBLISHER PARA USAR EM RECORD*/
+
+    @Test 
+    public void testGetStylePublisher(){
+        publisher.setStyle(style);
+        comparaStyle(publisher.getStyle());
+    }
+
+    /* FIM TESTE PUBLISHER */
+
+    /* INICIO TESTE DA CLASSE ORIGPUB PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleOrigPub(){
+        origpub.setStyle(style);
+        comparaStyle(origpub.getStyle());
+    }
+
+    /* FIM TESTE ORIGPUB */
+
+
+    /* INICIO TESTE DA CLASSE ISBN PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleIsbn(){
+        isbn.setStyle(style);
+        comparaStyle(isbn.getStyle());
+    }
+
+
+    /* FIM TESTE ISBN */
+
+
+    /* INICIO TESTE DA CLASSE ACCESSIONNUM PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleAccessionNum(){
+        accessionnum.setStyle(style);
+        comparaStyle(accessionnum.getStyle());
+    }
+
+    /* FIM TESTE ACCESSIONNUM */
+
+    /* INICIO TESTE DA CLASSE CALLNUM PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleCallNum(){
+        callnum.setStyle(style);
+        comparaStyle(callnum.getStyle());
+    }
+
+    /* FIM TESTE CALLNUM */
+
+    /* INICIO TESTE DA CLASSE REPORTID PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleReportId(){
+        reportid.setStyle(style);
+        comparaStyle(reportid.getStyle());
+    }
+
+    /* FIM TESTE REPORTID */
+
+    /* INICIO TESTE DA CLASSE ELETRONICRESOURCENUM PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleElectronicResourceNum(){
+        electronicresourcenum.setStyle(style);
+        comparaStyle(electronicresourcenum.getStyle());
+    }
+
+    /* FIM TESTE ELETRONICRESOURCENUM */
+
+    /* INICIO TESTE DA CLASSE ABSTRACT PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleAbstract(){
+        abstractt.setStyle(style);
+        comparaStyle(abstractt.getStyle());
+    }
+
+    /* FIM TESTE ABSTRACT */
+
+
+    /* INICIO TESTE DA CLASSE LABEL PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleLabel(){
+        label.setStyle(style);
+        comparaStyle(label.getStyle());
+    }
+
+    /* FIM TESTE LABEL */
+
+
+    /* INICIO TESTE DA CLASSE CODEN PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleCoden(){
+        coden.setStyle(style);
+        comparaStyle(coden.getStyle());
+    }
+
+    /* FIM TESTE CODEN */
+
+    /* INICIO TESTE DA CLASSE IMAGE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetFileImage(){
+        image.setFile("File Test");
+        assertEsquals("File Test", image.getFile());
+    }
+
+    @Test 
+    public void testGetNameImage(){
+        image.setName("Name Test");
+        assertEsquals("Name Test", image.getName());
+    }
+
+    @Test 
+    public void testGetValueImage(){
+        image.setValue("Value Test");
+        assertEsquals("Value Test", image.getValue());
+    }
+
+    /* FIM TESTE IMAGE */
+
+
+    /* INICIO TESTE DA CLASSE CAPTION PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleCaption(){
+        caption.setStyle(style);
+        comparaStyle(caption.getStyle());
+    }
+
+    /* FIM TESTE CAPTION */
+
+
+    /* INICIO TESTE DA CLASSE NOTES PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleNotes(){
+        notes.setStyle(style);
+        comparaStyle(notes.getStyle());
+    }
+
+    /* FIM TESTE NOTES */
+
+    /* INICIO TESTE DA CLASSE RESEARCHNOTES PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleResearchNotes(){
+        researchnotes.setStyle(style);
+        comparaStyle(researchnotes.getStyle());
+    }
+
+    /* FIM TESTE RESEARCHNOTES */
+
+    /* INICIO TESTE DA CLASSE WORKTYPE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleWorkType(){
+        worktype.setStyle(style);
+        comparaStyle(worktype.getStyle());
+    }
+
+    /* FIM TESTE WORKTYPE */
+
+
+    /* INICIO TESTE DA CLASSE SIZE PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleSize(){
+        size.setStyle(style);
+        comparaStyle(size.getStyle());
+    }
+
+    /* FIM TESTE SIZE */
+
+    /* INICIO TESTE DA CLASSE REPRORATIO PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleReproRatio(){
+        reproratio.setStyle(style);
+        comparaStyle(reproratio.getStyle());
+    }
+
+    /* FIM TESTE REPRORATIO */
+
+    /* INICIO TESTE DA CLASSE REMOTEDATABASENAME PARA USAR EM RECORD */
+
+    @Test 
+    public void testGetStyleRemoteDatabaseName(){
+        remotedatabasename.setStyle(style);
+        comparaStyle(remotedatabasename.getStyle());
+    }
+
+    /* FIM TESTE REMOTEDATABASENAME */
+
+
+    /* INICIO TESTE DA CLASSE AUTHOR PARA USAR EM AUTHORS */
+
+    @Test 
+    public void testGetCorpNameAuthorsContributors(){
+        author.setCorpName("CorpName Test");
+        assertEsquals("CorpName Test", author.getCorpName());
+    }
+
+    @Test 
+    public void testGetFirstNameAuthorsContributors(){
+        author.setFirstName("FirstName Test");
+        assertEsquals("FirstName Test", author.getFirstName());
+    }
+
+    @Test 
+    public void testGetInitialsAuthorsContributors(){
+        author.setInitials("Initials Test");
+        assertEsquals("Initials Test", author.getInitials());
+    }
+
+    @Test 
+    public void testGetLastNameAuthorsContributors(){
+        author.setLastName("LastName Test");
+        assertEsquals("LastName Test", author.getLastName());
+    }
+
+    @Test 
+    public void testGetMiddleInitialAuthorsContributors(){
+        author.setMiddleInitial("MiddleInitial Test");
+        assertEsquals("MiddleInitial Test", author.getMiddleInitial());
+    }
+
+    @Test 
+    public void testGetRoleAuthorsContributors(){
+        author.setRole("Role Test");
+        assertEsquals("Role Test", author.getRole());
+    }
+
+    @Test 
+    public void testGetSalutationAuthorsContributors(){
+        author.setSalutation("Salutation Test");
+        assertEsquals("Salutation Test", author.getSalutation());
+    }
+
+    @Test 
+    public void testGetSuffixAuthorsContributors(){
+        author.setSuffix("Suffix Test");
+        assertEsquals("Suffix Test", author.getSuffix());
+    }
+
+    @Test 
+    public void testGetTitleAuthorsContributors(){
+        author.setTitle("Title Test");
+        assertEsquals("Title Test", author.getTitle());
+    }
+
+    @Test
+    public void testGetStyleAuthorsContributors(){
+        author.setStyle(style);
+        comparaStyle(author.getStyle());
+    }
+
+
+    /* INICIO TESTE DA CLASSE AUTHORS PARA USAR EM CONTRIBUTORS */
+
+    @Test
+    public void testGetAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, authors.getAuthor());
+    }
+
+    @Test
+    public void testGetSecundaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, secundaryauthors.getAuthor());
+    }
+
+    @Test
+    public void testGetTertiaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, tertiaryauthors.getAuthor());
+    }
+
+    @Test
+    public void testGetSubsidiaryAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, subsidiaryauthors.getAuthor());
+    }
+
+    @Test
+    public void testGetTranslatedAuthorsContributors(){
+        List<Author> listAuthor = new ArrayList<Author>();
+        assertEquals(listAuthor, translatedauthors.getAuthor());
+    }
+
+    /* FIM TESTE CONTRIBUTORS */
+
 
     /* INICIO TESTE CLASSE RECORD */
 
@@ -1103,6 +1585,211 @@ public class EndnoteRecordTest {
         record.setPackMethod(packMethod);
         assertEquals(packMethod, record.getPackMethod());
     }
+
+
+    @Test
+    public void testGetSourceAppRecord(){
+        record.setSourceApp(sourceApp);
+        assertEsquals(sourceApp.getName(), record.getSourceApp().getName());
+        assertEsquals(sourceApp.getPath(), record.getSourceApp().getPath());
+        assertEsquals(sourceApp.getValue(), record.getSourceApp().getValue());
+    }
+
+    @Test
+    public void testGetRefTypeRecord(){
+        record.setRefType(refType);
+        assertEsquals(refType.getName(), record.getRefType().getName());
+        assertEsquals(refType.getValue(), record.getRefType().getValue());
+    }
+
+    @Test
+    public void testGetPeriodicalRecord(){
+        record.setPeriodical(periodical);
+        
+        periodical.setFullTitle(fulltitle);
+        periodical.setAbbr1(abbr1);
+        periodical.setAbbr2(abbr2);
+        periodical.setAbbr3(abbr3);
+
+        assertEquals(periodical.getFullTitle().getStyle(), record.getPeriodical().getFullTitle().getStyle());
+        assertEquals(periodical.getAbbr1().getStyle(), record.getPeriodical().getAbbr1().getStyle());
+        assertEquals(periodical.getAbbr2().getStyle(), record.getPeriodical().getAbbr2().getStyle()); 
+        assertEquals(periodical.getAbbr3().getStyle(), record.getPeriodical().getAbbr3().getStyle()); 
+     
+    }
+
+    @Test
+    public void testGetNumberRecord(){
+        record.setNumber(number);
+        assertEquals(number.getStyle(), record.getNumber().getStyle());
+    }
+
+    @Test
+    public void testGetIssueRecord(){
+        record.setIssue(issue);
+        assertEquals(issue.getStyle(), record.getIssue().getStyle());
+    }
+
+
+
+    @Test
+    public void testGetSecundaryVolumeRecord(){
+        record.setSecundaryVolume(secudaryvolume);
+        assertEquals(secudaryvolume.getStyle(), record.getSecundaryVolume().getStyle());
+    }
+
+    @Test
+    public void testGetSecundaryIssueRecord(){
+        record.setSecundaryIssue(secudaryissue);
+        assertEquals(secudaryissue.getStyle(), record.getSecundaryIssue().getStyle());
+    }
+
+    @Test
+    public void testGetPubLocationRecord(){
+        record.setPubLocation(publocation);
+        assertEquals(publocation.getStyle(), record.getPubLocation().getStyle());
+    }
+
+    @Test
+    public void testGetPublisherRecord(){
+        record.setPublisher(publisher);
+        assertEquals(publisher.getStyle(), record.getPublisher().getStyle());
+    }
+
+    @Test
+    public void testGetOrigPubRecord(){
+        origpub.setOrigPub(origpub);
+        assertEquals(origpub.getStyle(), record.getOrigPub().getStyle());
+    }
+
+    @Test
+    public void testGetIsbnRecord(){
+        isbn.setIsbn(isbn);
+        assertEquals(isbn.getStyle(), record.getIsbn().getStyle());
+    }
+
+    @Test
+    public void testGetAccessionNumRecord(){
+        accessionnum.setAccessionNum(accessionnum);
+        assertEquals(accessionnum.getStyle(), record.getAccessionNum().getStyle());
+    }
+
+    @Test
+    public void testGetCallNumRecord(){
+        callnum.setCallNum(callnum);
+        assertEquals(callnum.getStyle(), record.getCallNum().getStyle());
+    }
+
+    @Test
+    public void testGetReportIdRecord(){
+        reportid.setReportId(reportid);
+        assertEquals(reportid.getStyle(), record.getReportId().getStyle());
+    }
+
+    @Test
+    public void testGetCodenRecord(){
+        coden.setCoden(coden);
+        assertEquals(coden.getStyle(), record.getCoden().getStyle());
+    }
+
+    @Test
+    public void testGetElectronicResourceNumRecord(){
+        electronicresourcenum.setElectronicResourceNum(electronicresourcenum);
+        assertEquals(electronicresourcenum.getStyle(), record.getElectronicResourceNum().getStyle());
+    }
+
+    @Test
+    public void testGetAbstractRecord(){
+        abstractt.setAbstract(abstractt);
+        assertEquals(abstractt.getStyle(), record.getAbstract().getStyle());
+    }
+
+    @Test
+    public void testGetLabelRecord(){
+        label.setLabel(label);
+        assertEquals(label.getStyle(), record.getLabel().getStyle());
+    }
+
+    @Test
+    public void testGetImageRecord(){
+        record.setImage(image);
+        assertEsquals(image.getFile(), record.getImage().getFile());
+        assertEsquals(image.getName(), record.getImage().getName());
+        assertEsquals(image.getValue(), record.getImage().getValue());
+    }
+
+    @Test
+    public void testGetCaptionRecord(){
+        caption.setCaption(caption);
+        assertEquals(caption.getStyle(), record.getCaption().getStyle());
+    }
+
+    @Test
+    public void testGetNotesRecord(){
+        notes.setNotes(notes);
+        assertEquals(notes.getStyle(), record.getNotes().getStyle());
+    }
+
+    @Test
+    public void testGetResearchNotesRecord(){
+        researchnotes.setResearchNotes(researchnotes);
+        assertEquals(researchnotes.getStyle(), record.getResearchNotes().getStyle());
+    }
+
+    @Test
+    public void testGetWorkTypeRecord(){
+        worktype.setWorkType(worktype);
+        assertEquals(worktype.getStyle(), record.getWorkType().getStyle());
+    }
+
+    @Test
+    public void testGetSizeRecord(){
+        size.setSize(size);
+        assertEquals(size.getStyle(), record.getSize().getStyle());
+    }
+
+    @Test
+    public void testGetReproRatioRecord(){
+        reproratio.setReproRatio(reproratio);
+        assertEquals(reproratio.getStyle(), record.getReproRatio().getStyle());
+    }
+
+    @Test
+    public void testGetRemoteDatabaseNameRecord(){
+        remotedatabasename.setRemoteDatabaseName(remotedatabasename);
+        assertEquals(remotedatabasename.getStyle(), record.getRemoteDatabaseName().getStyle());
+    }
+
+    @Test
+    public void testGetAuthorsContributors(){
+        contributors.setAuthors(authors);
+        assertEquals(authors, contributors.getAuthors());
+    }
+
+    @Test
+    public void testGetSecundaryAuthorsContributors(){
+        contributors.setSecundaryAuthors(secundaryauthors);
+        assertEquals(secundaryauthors, contributors.getSecundaryAuthors());
+    }
+
+    @Test
+    public void testGetTertiaryAuthorsContributors(){
+        contributors.setTertiaryAuthors(tertiaryauthors);
+        assertEquals(tertiaryauthors, contributors.getTertiaryAuthors());
+    }
+
+    @Test
+    public void testGetSubsidiaryAuthorsContributors(){
+        contributors.setSubsidiaryAuthors(subsidiaryauthors);
+        assertEquals(subsidiaryauthors, contributors.getSubsidiaryAuthors());
+    }
+
+    @Test
+    public void testGetTranslatedAuthorsContributors(){
+        contributors.setTranslatedAuthors(translatedauthors);
+        assertEquals(translatedauthors, contributors.getTranslatedAuthors());
+    }
+
 
     /* FIM TESTE RECORD */
 

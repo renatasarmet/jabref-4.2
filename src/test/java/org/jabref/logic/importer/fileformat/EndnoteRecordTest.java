@@ -107,6 +107,8 @@ public class EndnoteRecordTest {
     private SubsidiaryAuthors subsidiaryauthors;
     private TranslatedAuthors translatedauthors;
     private Periodical periodical;
+    private Records records;
+    private Xml xml;
 
     @BeforeEach
     public void setUp() {
@@ -201,6 +203,8 @@ public class EndnoteRecordTest {
         subsidiaryauthors = new ObjectFactory().createSubsidiaryAuthors();
         translatedauthors = new ObjectFactory().createTranslatedAuthors();
         periodical = new ObjectFactory().createPeriodical();
+        records = new ObjectFactory().createRecords();
+        xml = new ObjectFactory().createXml();
     }
 
 
@@ -1804,5 +1808,23 @@ public class EndnoteRecordTest {
     }
 
     /* FIM TESTE RECORD */
+
+    /* INICIO TESTE CLASSE RECORDS */
+
+    @Test
+    public void testGetRecordRecords(){
+        List<Record> listRecord = new ArrayList<Record>();
+        assertEquals(listRecord, records.getRecord());
+    }
+    /* FIM TESTE RECORDS */
+
+    /* INICIO TESTE CLASSE XML */
+    @Test
+    public void testGetRecordsXml(){
+        xml.setRecords(records);
+        assertEquals(records, xml.getRecords());
+    }
+
+    /* FIM TESTE XML */
 
 }

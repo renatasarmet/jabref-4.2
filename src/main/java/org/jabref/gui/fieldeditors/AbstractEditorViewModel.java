@@ -22,6 +22,7 @@ import de.saxsys.mvvmfx.utils.validation.FunctionBasedValidator;
 import de.saxsys.mvvmfx.utils.validation.ValidationMessage;
 import de.saxsys.mvvmfx.utils.validation.Validator;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.jabref.model.entry.FieldName;
 
 public class AbstractEditorViewModel extends AbstractViewModel {
     protected final String fieldName;
@@ -35,10 +36,18 @@ public class AbstractEditorViewModel extends AbstractViewModel {
         this.fieldName = fieldName;
         this.suggestionProvider = suggestionProvider;
 
+
         this.fieldValidator = new CompositeValidator();
         for (ValueChecker checker : fieldCheckers.getForField(fieldName)) {
-            FunctionBasedValidator<String> validator = new FunctionBasedValidator<>(text, value ->
-                    checker.checkValue(value).map(ValidationMessage::warning).orElse(null));
+            FunctionBasedValidator<String> validator = new FunctionBasedValidator<>(text, value -> {
+                System.out.println("ANTES VALUE: " + value);
+                ValidationMessage teste = checker.checkValue(value).map(ValidationMessage::warning).orElse(null);
+                /*if(fieldName.equals(FieldName.YEAR)){
+                    value = teste.toString();
+                }*/
+                System.out.println("DEPOIS VALUE: " + value);
+                return teste;
+            });
             fieldValidator.addValidators(validator);
         }
     }

@@ -23,7 +23,7 @@ public class FieldChecker implements IntegrityCheck.Checker {
         if (!value.isPresent()) {
             return Collections.emptyList();
         }
-
+        
         return OptionalUtil.toList(checker.checkValue(value.get()).map(message -> new IntegrityMessage(message, entry, field)));
     }
 }

@@ -835,6 +835,7 @@ public class BibEntry implements Cloneable {
     }
 
     public void setDate(Date date) {
+        System.out.println("year");
         date.getYear().ifPresent(year -> setField(FieldName.YEAR, year.toString()));
         date.getMonth().ifPresent(this::setMonth);
         date.getDay().ifPresent(day -> setField(FieldName.DAY, day.toString()));

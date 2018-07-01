@@ -29,8 +29,12 @@ public class RequiredFieldsTab extends FieldsEditorTab {
         Set<String> fields = new LinkedHashSet<>();
         fields.addAll(entryType.getRequiredFieldsFlat());
 
+        System.out.println(fields);
+
         // Add the edit field for Bibtex-key.
         fields.add(BibEntry.KEY_FIELD);
+
+        System.out.println("depois" + fields);
 
         return fields;
     }

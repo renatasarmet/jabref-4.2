@@ -3,10 +3,7 @@ package org.jabref.logic.bibtex.comparator;
 import java.text.Collator;
 import java.text.ParseException;
 import java.text.RuleBasedCollator;
-import java.util.Comparator;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 import org.jabref.model.entry.AuthorList;
 import org.jabref.model.entry.BibEntry;
@@ -43,8 +40,15 @@ public class FieldComparator implements Comparator<BibEntry> {
     }
 
     public FieldComparator(String field, boolean descending) {
+
         this.fieldName = Objects.requireNonNull(field);
+        System.out.println("this FieldName");
+        System.out.println(this.fieldName);
+        System.out.println("fieldName");
+        System.out.println(fieldName);
         this.field = fieldName.split(FieldName.FIELD_SEPARATOR);
+        System.out.println("this Field");
+        System.out.println(Arrays.toString(this.field));
         fieldType = determineFieldType();
         isNumeric = InternalBibtexFields.isNumeric(this.field[0]);
         multiplier = descending ? -1 : 1;

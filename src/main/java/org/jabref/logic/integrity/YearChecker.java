@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.strings.StringUtil;
 
+import javax.swing.*;
+
 public class YearChecker implements ValueChecker {
 
     private static final Predicate<String> CONTAINS_FOUR_DIGIT = Pattern.compile("([^0-9]|^)[0-9]{4}([^0-9]|$)")
@@ -23,15 +25,24 @@ public class YearChecker implements ValueChecker {
      */
     @Override
     public Optional<String> checkValue(String value) {
+
+        JFrame frame = new JFrame("JOptionPane");
+
         if (StringUtil.isBlank(value)) {
             return Optional.empty();
         }
 
         if (!CONTAINS_FOUR_DIGIT.test(value.trim())) {
-            return Optional.of(Localization.lang("should contain a four digit number"));
+            value = JOptionPane.showInputDialog(frame,"Digite um ano com quatro números");
+            System.out.println(value);
+
+            return Optional.of(value);
+                    //Optional.of(Localization.lang("should contain a four digit number"));
         }
 
         if (!ENDS_WITH_FOUR_DIGIT.test(value.replaceAll(PUNCTUATION_MARKS, ""))) {
+            String resposta = JOptionPane.showInputDialog(frame,"Digite um ano com quatro números");
+
             return Optional.of(Localization.lang("last four nonpunctuation characters should be numerals"));
         }
 

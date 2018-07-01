@@ -122,6 +122,8 @@ abstract class FieldsEditorTab extends EntryEditorTab {
             addColumn(gridPane, 0, labels);
             addColumn(gridPane, 1, editors.values().stream().map(FieldEditorFX::getNode));
 
+            System.out.println("values " + editors.values());
+
             gridPane.getColumnConstraints().addAll(columnDoNotContract, columnExpand);
 
             setRegularRowLayout(gridPane, rows);

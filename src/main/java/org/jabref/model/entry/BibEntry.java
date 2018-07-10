@@ -1,5 +1,7 @@
 package org.jabref.model.entry;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -37,6 +39,9 @@ import com.google.common.base.Strings;
 import com.google.common.eventbus.EventBus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.swing.*;
+
 
 public class BibEntry implements Cloneable {
 
@@ -412,6 +417,19 @@ public class BibEntry implements Cloneable {
 
         if (BibEntry.ID_FIELD.equals(fieldName)) {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
+        }
+
+        if("year".equals(name)){
+
+            try {
+                if(!value.matches("^[0-9]+") | value.length() < 4 | value.length() > 4){
+                    throw new ParseException("", 0);
+                }
+
+            } catch (ParseException e){
+                value = "";
+                throw new IllegalArgumentException("Ano inválido.");
+            }
         }
 
         changed = true;

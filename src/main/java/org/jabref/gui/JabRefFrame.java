@@ -847,6 +847,7 @@ public class JabRefFrame extends JFrame implements OutputPrinter {
                         // The user wants to save.
                         try {
                             //getCurrentBasePanel().runCommand("save");
+
                             SaveDatabaseAction saveAction = new SaveDatabaseAction(getCurrentBasePanel());
                             saveAction.runCommand();
                             if (saveAction.isCanceled() || !saveAction.isSuccess()) {
